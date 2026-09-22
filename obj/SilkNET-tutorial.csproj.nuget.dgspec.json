@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/Henri/Dokumente/projects/c#/SilkNET-tutorial/SilkNET-tutorial.csproj": {}
+    "/home/Henri/Dokumente/projects/cs/SilkNET-tutorial/SilkNET-tutorial.csproj": {}
   },
   "projects": {
-    "/home/Henri/Dokumente/projects/c#/SilkNET-tutorial/SilkNET-tutorial.csproj": {
+    "/home/Henri/Dokumente/projects/cs/SilkNET-tutorial/SilkNET-tutorial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Henri/Dokumente/projects/c#/SilkNET-tutorial/SilkNET-tutorial.csproj",
+        "projectUniqueName": "/home/Henri/Dokumente/projects/cs/SilkNET-tutorial/SilkNET-tutorial.csproj",
         "projectName": "SilkNET-tutorial",
-        "projectPath": "/home/Henri/Dokumente/projects/c#/SilkNET-tutorial/SilkNET-tutorial.csproj",
+        "projectPath": "/home/Henri/Dokumente/projects/cs/SilkNET-tutorial/SilkNET-tutorial.csproj",
         "packagesPath": "/home/Henri/.nuget/packages/",
-        "outputPath": "/home/Henri/Dokumente/projects/c#/SilkNET-tutorial/obj/",
+        "outputPath": "/home/Henri/Dokumente/projects/cs/SilkNET-tutorial/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/Henri/.nuget/NuGet/NuGet.Config"
@@ -43,6 +43,20 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Silk.NET.Input": {
+              "target": "Package",
+              "version": "[2.23.0, )"
+            },
+            "Silk.NET.OpenGL": {
+              "target": "Package",
+              "version": "[2.23.0, )"
+            },
+            "Silk.NET.Windowing": {
+              "target": "Package",
+              "version": "[2.23.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,9 +1,44 @@
-﻿namespace SilkNET_tutorial;
+﻿using Silk.NET.Input;
+using Silk.NET.Maths;
+using Silk.NET.Windowing;
+
+namespace SilkNET_tutorial;
 
 class Program
 {
+    private static IWindow _window;
+
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        WindowOptions options = WindowOptions.Default;
+        options.Size = new Vector2D<int>(800, 600);
+
+        _window = Window.Create(options);
+
+        _window.Load += OnLoad;
+        _window.Update += OnUpdate;
+        _window.Render += OnRender;
+
+        _window.Run();
+    }
+
+    private static void OnLoad()
+    {
+        _window.Center();
+
+        IInputContext input = _window.CreateInput();
+        for (int i = 0; i < input.Keyboards.Count; i++)
+        {
+            input.Keyboards[i].KeyDown += KeyDown;
+        }
+    }
+
+    private static void OnUpdate(double deltaTime) { }
+
+    private static void OnRender(double deltaTime) { }
+
+    private static void KeyDown(IKeyboard keyboard, Key key, int keyCode)
+    {
+        if (key == Key.Escape) { _window.Close(); }
     }
 }
