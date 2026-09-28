@@ -4,7 +4,7 @@ using Silk.NET.Windowing;
 using Silk.NET.OpenGL;
 using System.Drawing;
 
-// https://dotnet.github.io/Silk.NET/docs/opengl/c1/2-hello-quad#creating-the-program
+// https://dotnet.github.io/Silk.NET/docs/opengl/c1/2-hello-quad/#setting-up-the-attributes
 
 namespace SilkNET_tutorial;
 
@@ -115,7 +115,23 @@ class Program
             throw new Exception("Fragment shader failed to compile: " + _gl.GetShaderInfoLog(fragmentShader));
         }
 
+        _program = _gl.CreateProgram();
 
+        _gl.AttachShader(_program, vertexShader);
+        _gl.AttachShader(_program, fragmentShader);
+
+        _gl.LinkProgram(_program);
+
+        _gl.GetProgram(_program, ProgramPropertyARB.LinkStatus, out int lStatus);
+        if (lStatus != (int) GLEnum.True)
+        {
+            throw new Exception("Program failed to link" + _gl.GetProgramInfoLog(_program));
+        }
+
+        _gl.DetachShader(_program, vertexShader);
+        _gl.DetachShader(_program, fragmentShader);
+        _gl.DeleteShader(vertexShader);
+        _gl.DeleteShader(fragmentShader);
     }
 
     private static void OnUpdate(double deltaTime) { }

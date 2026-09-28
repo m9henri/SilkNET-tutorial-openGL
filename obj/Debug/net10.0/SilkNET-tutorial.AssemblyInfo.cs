@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SilkNET-tutorial")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+309efed67f959567d70751081abc68f0d791ae03")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f95220965836b6a039be6c869a9688df5cbaa593")]
 [assembly: System.Reflection.AssemblyProductAttribute("SilkNET-tutorial")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SilkNET-tutorial")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
