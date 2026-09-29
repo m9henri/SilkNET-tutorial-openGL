@@ -132,11 +132,25 @@ class Program
         _gl.DetachShader(_program, fragmentShader);
         _gl.DeleteShader(vertexShader);
         _gl.DeleteShader(fragmentShader);
+
+        const uint positionLoc = 0;
+        _gl.EnableVertexAttribArray(positionLoc);
+        _gl.VertexAttribPointer(positionLoc, 3, VertexAttribPointerType.Float, false, 3 * sizeof(float), (void*) 0);
+
+        _gl.BindVertexArray(0);
+        _gl.BindBuffer(BufferTargetARB.ArrayBuffer, 0);
+        _gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
+
     }
 
     private static void OnUpdate(double deltaTime) { }
 
-    private static unsafe void OnRender(double deltaTime) { }
+    private static unsafe void OnRender(double deltaTime)
+    {
+        _gl.BindVertexArray(_vao);
+        _gl.UseProgram(_program);
+        _gl.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, (void*) 0);
+    }
 
     private static void KeyDown(IKeyboard keyboard, Key key, int keyCode)
     {
