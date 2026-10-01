@@ -4,7 +4,7 @@ using Silk.NET.Windowing;
 using Silk.NET.OpenGL;
 using System.Drawing;
 
-// https://dotnet.github.io/Silk.NET/docs/opengl/c1/2-hello-quad/#setting-up-the-attributes
+// https://dotnet.github.io/Silk.NET/docs/opengl/c1/3-hello-texture
 
 namespace SilkNET_tutorial;
 
